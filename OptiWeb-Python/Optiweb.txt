@@ -1,0 +1,3 @@
+ Optimizador Masivo de Imágenes a WebP (Python)
+ES: Un script de automatización muy útil hecho en Python con la librería Pillow. Sirve para coger una carpeta llena de fotos pesadas, redimensionarlas de forma proporcional si son muy grandes y convertirlas masivamente al formato WebP. Lo programé para solucionar el problema real del peso de las imágenes y mejorar el rendimiento de carga (Core Web Vitals) en proyectos web.
+EN: A highly useful automation script made in Python with the Pillow library. It takes a folder full of heavy photos, proportionally resizes them if they are too large, and mass-converts them to WebP format. I coded it to solve the real problem of image weight and improve loading performance (Core Web Vitals) in web projects.

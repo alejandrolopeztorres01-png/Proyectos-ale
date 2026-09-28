@@ -1,0 +1,3 @@
+ Network Asset Manager (Swift)
+ES: Diseñé este pequeño script en Swift para gestionar el inventario de una red (routers, switches, servidores). Sirve para registrar dispositivos y cambiar sus estados operativos. Es un proyecto sencillo, pero perfecto para demostrar que entiendo la sintaxis de Swift, el uso de 'structs', 'enums' y el desempaquetado seguro de variables opcionales.
+EN: I designed this small Swift script to manage a network inventory (routers, switches, servers). It allows registering devices and changing their operational status. It's a simple project, but perfect for demonstrating my understanding of Swift's syntax, 'structs', 'enums', and safe optional variable unwrapping.

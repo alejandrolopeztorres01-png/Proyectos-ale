@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT Kanban | Enterprise Task Management</title>
+    <meta name="description" content="Gestor de tareas ágil programado en Vanilla JS.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado minimalista -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-mark"></span>
+                <h1>ALT <span>Kanban</span></h1>
+            </div>
+            <button id="btn-add-task" class="btn-primary">Nueva Tarea</button>
+        </div>
+    </header>
+
+    <!-- Tablero Kanban -->
+    <main class="kanban-board">
+        <!-- Columna: Pendiente -->
+        <section class="kanban-column" data-status="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column-header">
+                <h2>Pendientes <span class="task-count" id="count-todo">0</span></h2>
+            </div>
+            <div class="task-list" id="list-todo">
+                <!-- Tareas inyectadas vía JS -->
+            </div>
+        </section>
+
+        <!-- Columna: En Proceso -->
+        <section class="kanban-column" data-status="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column-header">
+                <h2>En Proceso <span class="task-count" id="count-doing">0</span></h2>
+            </div>
+            <div class="task-list" id="list-doing"></div>
+        </section>
+
+        <!-- Columna: Completado -->
+        <section class="kanban-column" data-status="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column-header">
+                <h2>Completado <span class="task-count" id="count-done">0</span></h2>
+            </div>
+            <div class="task-list" id="list-done"></div>
+        </section>
+    </main>
+
+    <!-- Modal de Creación (Nativo y Accesible) -->
+    <dialog id="task-modal" class="modal">
+        <form id="task-form" class="modal-content">
+            <h3>Crear Tarea</h3>
+            
+            <div class="form-group">
+                <label for="task-title">Título</label>
+                <input type="text" id="task-title" required autocomplete="off" placeholder="Ej. Refactorizar API de usuarios">
+            </div>
+
+            <div class="form-group">
+                <label for="task-desc">Descripción (Opcional)</label>
+                <textarea id="task-desc" rows="3" placeholder="Detalles de la implementación..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="task-priority">Prioridad</label>
+                <select id="task-priority">
+                    <option value="low">Baja</option>
+                    <option value="medium" selected>Media</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" id="btn-cancel" class="btn-secondary">Cancelar</button>
+                <button type="submit" class="btn-primary">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

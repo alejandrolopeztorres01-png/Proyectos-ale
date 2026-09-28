@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio profesional de Alejandro López Torres - Desarrollador Web y Técnico Informático. Proyectos en Java, Python, Swift, SQL y Frontend.">
+  <title>Alejandro López Torres | Portfolio & Software Development</title>
+  
+  <!-- Preconexión de tipografías para optimizar Core Web Vitals (FCP y LCP) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Encabezado de navegación sticky con efecto cristal (backdrop-filter) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">&lt;</span>AL<span class="logo-accent">/</span>T<span class="logo-bracket">&gt;</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-item">Sobre mí</a></li>
+          <li><a href="#skills" class="nav-item">Stack</a></li>
+          <li><a href="#projects" class="nav-item">Proyectos</a></li>
+          <li><a href="#contact" class="btn btn-outline">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION: Primera impresión con tipografía fluida y animaciones CSS de entrada -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge fade-in-up delay-1">
+            <span class="status-indicator"></span> Disponible para nuevos proyectos y contratación
+          </div>
+          <h1 class="hero-title fade-in-up delay-2">
+            Hola, soy <span class="highlight">Alejandro López</span>.<br>
+            Construyendo soluciones de software sólidas y eficientes.
+          </h1>
+          <p class="hero-subtitle fade-in-up delay-3">
+            Desarrollador Web (DAW) y Técnico en Sistemas y Redes. Especializado en arquitectura de aplicaciones, lógica backend limpia (Java, Python) e interfaces frontend modernas y accesibles.
+          </p>
+          <div class="hero-cta fade-in-up delay-4">
+            <a href="#projects" class="btn btn-primary">Explorar código</a>
+            <a href="#contact" class="btn btn-secondary">Hablemos</a>
+          </div>
+        </div>
+        
+        <!-- Tarjeta gráfica interactiva en CSS simulando la consola del sistema -->
+        <div class="hero-terminal fade-in-up delay-3">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">alejandro@dev:~/portfolio</span>
+          </div>
+          <div class="terminal-body">
+            <p class="code-line"><span class="token-keyword">const</span> <span class="token-variable">developer</span> = {</p>
+            <p class="code-line indent-1"><span class="token-key">name</span>: <span class="token-string">'Alejandro López Torres'</span>,</p>
+            <p class="code-line indent-1"><span class="token-key">focus</span>: [<span class="token-string">'Fullstack Development'</span>, <span class="token-string">'AI Automation'</span>],</p>
+            <p class="code-line indent-1"><span class="token-key">coreTech</span>: [<span class="token-string">'Java'</span>, <span class="token-string">'Python'</span>, <span class="token-string">'Swift'</span>, <span class="token-string">'SQL'</span>, <span class="token-string">'HTML/CSS'</span>],</p>
+            <p class="code-line indent-1"><span class="token-key">mindset</span>: <span class="token-string">'Clean Code & Continuous Growth'</span></p>
+            <p class="code-line">};</p>
+            <p class="code-line prompt"><span class="token-cursor">&gt;</span> <span class="typing-text">Ready to deploy high-scale software...</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ: Enfoque orientado a empresas y cultura técnica -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01. Perfil</span>
+          <h2 class="section-title">Sobre mí y mi visión técnica</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Mi trayectoria combina una sólida formación en <strong>Desarrollo de Aplicaciones Web (DAW)</strong> con una base técnica firme en <strong>Sistemas Microinformáticos y Redes</strong>. Esta visión 360° me permite no solo programar código funcional, sino entender la infraestructura, los entornos virtuales y el flujo de red sobre el que se ejecuta.
+            </p>
+            <p>
+              Me distingo por mi resolución proactiva de incidencias, mi pensamiento analítico y mi capacidad para adoptar rápidamente arquitecturas empresariales y flujos de trabajo basados en Inteligencia Artificial aplicada.
+            </p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">+6</span>
+              <span class="stat-label">Tecnologías clave dominadas</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Compromiso y adaptabilidad en equipo</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Cisco</span>
+              <span class="stat-label">Certificación oficial en redes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK TECNOLÓGICO: Grid responsive interactivo -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. Habilidades</span>
+          <h2 class="section-title">Tecnologías y herramientas</h2>
+        </div>
+        
+        <div class="skills-wrapper">
+          <!-- Lenguajes & Backend -->
+          <article class="skill-category-card">
+            <h3>Backend & Lógica</h3>
+            <p class="skill-desc">Construcción de algoritmos estructurados, POO y gestión de datos relacionales.</p>
+            <ul class="tags-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>Swift</li>
+              <li>SQL</li>
+            </ul>
+          </article>
+
+          <!-- Frontend & UI -->
+          <article class="skill-category-card">
+            <h3>Frontend & Interfaces</h3>
+            <p class="skill-desc">Estructuración semántica, maquetación adaptativa y rendimiento visual fluido.</p>
+            <ul class="tags-list">
+              <li>HTML5 Semántico</li>
+              <li>CSS3 / Grid / Flexbox</li>
+              <li>Responsive Design</li>
+              <li>Animaciones CSS</li>
+            </ul>
+          </article>
+
+          <!-- Sistemas & Productividad IA -->
+          <article class="skill-category-card">
+            <h3>Sistemas & Herramientas</h3>
+            <p class="skill-desc">Infraestructura local, diagnóstico de sistemas y aceleración mediante IA generativa.</p>
+            <ul class="tags-list">
+              <li>Redes Cisco</li>
+              <li>Máquinas Virtuales</li>
+              <li>Modelos IA (Gemini & Copilot)</li>
+              <li>Git / Control de Versiones</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS: Lista modular de showcase para reclutadores -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. Portafolio</span>
+          <h2 class="section-title">Mini-Proyectos Destacados</h2>
+          <p class="section-subtitle">Demostraciones prácticas desarrolladas para evidenciar estándares limpios de arquitectura y código.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Proyecto 1: Presentación Web -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-type">Frontend Architecture</span>
+              <div class="project-links">
+                <span class="repo-badge">V1.0</span>
+              </div>
+            </div>
+            <h3 class="project-title">Plataforma de Presentación UI/UX</h3>
+            <p class="project-description">
+              Diseño integral de landing page modular con animaciones fluidas CSS aceleradas por GPU, layout responsive y estructura semántica estricta.
+            </p>
+            <ul class="project-tech">
+              <li>HTML5</li>
+              <li>CSS3 Grid & Flexbox</li>
+              <li>Responsive Design</li>
+            </ul>
+          </article>
+
+          <!-- Proyecto 2: Lógica Backend / Python -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-type">Backend & Data</span>
+              <div class="project-links">
+                <span class="repo-badge">En desarrollo</span>
+              </div>
+            </div>
+            <h3 class="project-title">Sistema de Gestión y Lógica de Datos</h3>
+            <p class="project-description">
+              Módulo de procesamiento y lógica relacional con operaciones CRUD, validaciones robustas y optimización de consultas SQL.
+            </p>
+            <ul class="project-tech">
+              <li>Java / Python</li>
+              <li>SQL</li>
+              <li>Algoritmos</li>
+            </ul>
+          </article>
+
+          <!-- Proyecto 3: Automatización IA / Swift -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-type">Mobile / Automation</span>
+              <div class="project-links">
+                <span class="repo-badge">En desarrollo</span>
+              </div>
+            </div>
+            <h3 class="project-title">Integración de Flujos & Automatización</h3>
+            <p class="project-description">
+              Prototipo de aplicación nativa y pipelines automatizados integrando asistentes inteligentes para resolver problemas comunes de soporte y gestión.
+            </p>
+            <ul class="project-tech">
+              <li>Swift</li>
+              <li>Prompt Engineering</li>
+              <li>APIs</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / CTA -->
+    <section id="contact" class="contact-section">
+      <div class="container text-center">
+        <span class="section-tag">04. Conexión</span>
+        <h2 class="section-title">¿Listo para sumar talento a tu equipo?</h2>
+        <p class="contact-desc">
+          Actualmente estoy abierto a nuevas oportunidades laborales, colaboraciones técnicas y proyectos de alto impacto.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:alejandrolopeztorres01@gmail.com" class="btn btn-primary">Enviar un correo directo</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visitar mi GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Alejandro López Torres. Diseñado y programado desde cero con código limpio.</p>
+      <p class="location-tag">Barberà del Vallès, Barcelona</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+-- =========================================================================
+-- CONSULTAS, VISTAS Y TRANSACCIONES
+-- =========================================================================
+
+-- 1. VISTA (VIEW): Para evitar repetir JOINS complejos al consultar qué tiene cada usuario.
+CREATE VIEW Vista_Equipos_Asignados AS
+SELECT 
+    e.nombre,
+    e.apellidos,
+    d.nombre_departamento AS departamento,
+    h.tipo_equipo,
+    h.marca,
+    h.modelo,
+    a.fecha_asignacion
+FROM Empleados e
+INNER JOIN Asignaciones_Hardware a ON e.id_empleado = a.id_empleado
+INNER JOIN Equipos_Hardware h ON a.num_serie = h.num_serie
+LEFT JOIN Departamentos d ON e.id_departamento = d.id_departamento
+WHERE a.fecha_devolucion IS NULL;
+
+-- Para ver el resultado de la vista:
+-- SELECT * FROM Vista_Equipos_Asignados;
+
+-- 2. CONSULTA DE AGRUPACIÓN (GROUP BY & HAVING): ¿Cuántos equipos activos tiene cada departamento?
+SELECT 
+    d.nombre_departamento,
+    COUNT(a.id_asignacion) AS total_equipos
+FROM Departamentos d
+LEFT JOIN Empleados e ON d.id_departamento = e.id_departamento
+LEFT JOIN Asignaciones_Hardware a ON e.id_empleado = a.id_empleado AND a.fecha_devolucion IS NULL
+GROUP BY d.nombre_departamento
+HAVING total_equipos > 0
+ORDER BY total_equipos DESC;
+
+-- 3. TRANSACCIÓN (TRANSACTION): Proceso seguro para dar de baja un equipo roto.
+-- Si hay un error al cambiar el estado o al registrar la devolución, se hace un ROLLBACK automático.
+START TRANSACTION;
+
+    -- Paso 1: Cambiamos el estado del hardware a 'BAJA'
+    UPDATE Equipos_Hardware 
+    SET estado = 'BAJA' 
+    WHERE num_serie = 'SN-DELL-045';
+
+    -- Paso 2: Cerramos la asignación actual poniendo la fecha de devolución
+    UPDATE Asignaciones_Hardware 
+    SET fecha_devolucion = CURRENT_DATE, notas = 'Equipo dado de baja por avería de hardware'
+    WHERE num_serie = 'SN-DELL-045' AND fecha_devolucion IS NULL;
+
+COMMIT; 
+-- ROLLBACK; (Se ejecutaría si capturamos una excepción en un procedimiento almacenado)

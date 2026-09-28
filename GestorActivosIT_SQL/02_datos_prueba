@@ -1,0 +1,26 @@
+-- =========================================================================
+-- POBLACIÓN DE DATOS PARA PRUEBAS (Mock Data)
+-- =========================================================================
+
+-- Inserto los departamentos base
+INSERT INTO Departamentos (nombre_departamento) VALUES 
+('Desarrollo'), ('Sistemas y Redes'), ('Recursos Humanos'), ('Marketing');
+
+-- Inserto empleados
+INSERT INTO Empleados (nombre, apellidos, email, id_departamento) VALUES 
+('Alejandro', 'López Torres', 'alopez@empresa.local', 2),
+('Laura', 'García', 'lgarcia@empresa.local', 1),
+('Carlos', 'Martínez', 'cmartinez@empresa.local', 3);
+
+-- Registro del inventario de Hardware
+INSERT INTO Equipos_Hardware (num_serie, tipo_equipo, marca, modelo, estado) VALUES 
+('SN-MAC-001', 'Laptop', 'Apple', 'MacBook Pro 14', 'ACTIVO'),
+('SN-DELL-045', 'Laptop', 'Dell', 'XPS 15', 'ACTIVO'),
+('SN-CISCO-88', 'Router', 'Cisco', 'Catalyst 2960', 'MANTENIMIENTO'),
+('SN-MON-102', 'Monitor', 'LG', 'UltraWide 34', 'ACTIVO');
+
+-- Asignación de equipos a los usuarios
+INSERT INTO Asignaciones_Hardware (id_empleado, num_serie, fecha_asignacion) VALUES 
+(1, 'SN-CISCO-88', '2025-11-15'), -- Yo gestionando el router en mantenimiento
+(2, 'SN-MAC-001', '2026-01-10'),
+(2, 'SN-MON-102', '2026-01-10');

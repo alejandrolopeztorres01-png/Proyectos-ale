@@ -1,0 +1,3 @@
+ Gestor de Incidencias IT (Java)
+ES: Una aplicación de consola en Java que une mis conocimientos de programación con mi experiencia real en soporte técnico. Sirve para registrar, buscar, actualizar y eliminar tickets de incidencias informáticas. Me ayudó mucho a asentar las bases de la Programación Orientada a Objetos (POO), la encapsulación y el manejo de colecciones como ArrayList.
+EN: A Java console application that merges my programming skills with my real-world IT support experience. It is used to log, search, update, and delete IT support tickets. It really helped me solidify the basics of Object-Oriented Programming (OOP), encapsulation, and handling collections like ArrayList.

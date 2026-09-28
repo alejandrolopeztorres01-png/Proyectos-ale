@@ -1,0 +1,3 @@
+ Tablero Kanban de Productividad (JavaScript, HTML, CSS)
+ES: El proyecto más completo: un gestor de tareas ágil. Lo programé con Vanilla JavaScript para demostrar que sé manipular el DOM, usar la API nativa de Drag & Drop (arrastrar y soltar) y guardar datos en el LocalStorage para que la información no se borre al recargar. El diseño tiene un estilo "SaaS" (software empresarial), muy minimalista, oscuro y profesional.
+EN: The most comprehensive project: an agile task manager. I coded it with Vanilla JavaScript to prove my ability to manipulate the DOM, use the native Drag & Drop API, and save data in LocalStorage so information persists after reloading. The design features a very minimalist, dark, and professional "SaaS" (enterprise software) aesthetic.

@@ -1,0 +1,303 @@
+/* ==========================================================================
+   ENTERPRISE UI - MINIMALIST KANBAN
+   Estilo: Alto contraste, tipografía limpia, bordes finos (SaaS Design)
+   ========================================================================== */
+
+:root {
+    /* Paleta Monocromática Premium */
+    --bg-base: #000000;
+    --bg-surface: #0a0a0a;
+    --bg-elevated: #141414;
+    --bg-hover: #1f1f1f;
+    
+    --text-primary: #ededed;
+    --text-secondary: #888888;
+    
+    --border-color: #222222;
+    --border-focus: #444444;
+
+    /* Indicadores de estado sutiles */
+    --dot-high: #ff453a;
+    --dot-mid: #ffd60a;
+    --dot-low: #32d74b;
+
+    --font-main: 'Inter', -apple-system, sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --transition: 0.15s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER --- */
+.app-header {
+    background-color: var(--bg-base);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-mark {
+    width: 12px;
+    height: 12px;
+    background: var(--text-primary);
+    border-radius: 2px;
+}
+
+.header-content h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.header-content span {
+    color: var(--text-secondary);
+}
+
+/* --- BOTONES --- */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--text-primary);
+    color: var(--bg-base);
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+}
+
+/* --- TABLERO KANBAN --- */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-grow: 1;
+    width: 100%;
+    align-items: start;
+}
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.column-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.column-header h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task-count {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+.task-list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-height: 150px; /* Importante para poder soltar tareas si la columna está vacía */
+}
+
+/* --- TARJETAS (CARDS) --- */
+.task-card {
+    background-color: var(--bg-surface);
+    padding: 1.2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    cursor: grab;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.task-card:hover {
+    border-color: var(--border-focus);
+    transform: translateY(-2px);
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.task-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+}
+
+.priority-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.priority-badge::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.priority-high::before { background-color: var(--dot-high); }
+.priority-mid::before { background-color: var(--dot-mid); }
+.priority-low::before { background-color: var(--dot-low); }
+
+.btn-delete {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.btn-delete:hover {
+    color: var(--dot-high);
+}
+
+/* --- MODAL (DIALOG) --- */
+.modal {
+    margin: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    width: 90%;
+    max-width: 420px;
+    padding: 2rem;
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--border-focus);
+}
+
+.modal-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+}

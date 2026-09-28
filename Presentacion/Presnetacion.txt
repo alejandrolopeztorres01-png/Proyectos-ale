@@ -1,0 +1,3 @@
+Portfolio de Presentación (HTML & CSS)
+ES: Este es mi portafolio personal. Lo programé desde cero con HTML5 y CSS3 moderno (usando variables, Flexbox y Grid) para mostrar mis proyectos a empresas. Quise darle un diseño limpio, profesional y totalmente responsive para demostrar mis bases en maquetación frontend sin depender de frameworks.
+EN: This is my personal portfolio. I coded it from scratch using modern HTML5 and CSS3 (with variables, Flexbox, and Grid) to showcase my projects to companies. I wanted to give it a clean, professional, and fully responsive design to demonstrate my frontend layout fundamentals without relying on frameworks.

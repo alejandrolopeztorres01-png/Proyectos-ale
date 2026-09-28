@@ -1,0 +1,3 @@
+ Gestión de Activos IT y Licencias (SQL)
+ES: Un esquema de base de datos relacional diseñado para controlar el hardware asignado a los empleados de una empresa. Incluye la creación de tablas con claves primarias y foráneas, inserción de datos de prueba, y el uso de consultas avanzadas como INNER JOIN, Vistas (Views) y Transacciones (Transactions) seguras para evitar errores al dar de baja equipos.
+EN: A relational database schema designed to track hardware assigned to company employees. It includes table creation with primary and foreign keys, mock data insertion, and the use of advanced queries like INNER JOIN, Views, and secure Transactions to prevent data errors when decommissioning equipment.
